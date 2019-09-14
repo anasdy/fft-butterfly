@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../project_2_FFT_butterfy.srcs/sources_1/new/m_fft_two_module.vhd" \
+"../../../../project_2_FFT_butterfy.srcs/sim_1/new/tb_fft_two_module.vhd" \
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,5 @@
+# ignore cache
+project_2_FFT_butterfy.cache/
+
+# ignore all .log files
+*.log
