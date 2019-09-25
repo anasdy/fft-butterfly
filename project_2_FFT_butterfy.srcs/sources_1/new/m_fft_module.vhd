@@ -35,21 +35,66 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
+-----------------------------------------------
+-- #Entity
+-----------------------------------------------
 entity m_fft_module is
+-----------------------------------------------
+-- #Generic
+-----------------------------------------------
+    Generic(
+        -- FFT width
+        C_FFT_WIDTH :   integer := 8;
+        -- weight coeficient width
+        C_W_WIDTH   :   integer := 8
+    );
+------------------------------------------------
+-- #Port
+------------------------------------------------
+
 --  Port ( );
 end m_fft_module;
 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------
+-- #architecture
+------------------------------------------------
 architecture Behavioral of m_fft_module is
+    ------------------------------------------------
+    -- #f_w_n_k_re function calculate real part of W(n,k)
+    -- Where
+    --  n =  C_FFT_WIDTH
+    --  k = 0 .. (n - 1)  
+    -- W(n,k) = exp^(-j*(2pi/n)*k) = cos((2pi/n)*k) + j sin((2pi/n)*k)
+    -- Re(W(n,k)) = Re(exp^(-j*(2pi/n)*k)) = cos((2pi/n)*k)
+    ------------------------------------------------
+    function f_w_n_k_re ( k  : in integer range 0 to C_FFT_WIDTH)
+    return std_logic_vector is
+    begin
+    
+    end function f_w_n_k_re;
+    
+    ------------------------------------------------
+    -- #f_w_n_k_im function calculate imaginary part of W(n,k)
+    -- Where
+    --  n =  C_FFT_WIDTH
+    --  k = 0 .. (n - 1)  
+    -- W(n,k) = exp^(-j*(2pi/n)*k) = cos((2pi/n)*k) + j sin((2pi/n)*k)
+    -- Im(W(n,k)) = Im(exp^(-j*(2pi/n)*k)) = sin((2pi/n)*k)
+    ------------------------------------------------
+    function f_w_n_k_im ( k  : in integer range 0 to C_FFT_WIDTH)
+    return std_logic_vector is
+    begin
+    
+    end function f_w_n_k_im;
 
 
--- функция вычисления коэффициентов
--- добавить описание, размерности и т д
-function f_w_n_k (  n : in std_logic_vector;
-                    k : in std_logic_vector)
-return std_logic_vector is
-begin
-end function f_w_n_k;
 
+------------------------------------------------
+-- #Begin
+------------------------------------------------
 begin
 
 
